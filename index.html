@@ -1,0 +1,266 @@
+
+<!-- saved from url=(0034)http://statmt.org/wmt11/index.html -->
+<html class="gr__statmt_org"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>CoNLL 2018 The SIGNLL Conference on Computational Natural Language Learning</title>
+    <style> h3 { margin-top: 2em; } </style>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#ccc;color:#333;background-color:#fff;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+.tg .tg-j4kc{background-color:#efefef;text-align:left}
+.tg .tg-zlxb{background-color:#ffffff;text-align:left}
+.tg .tg-i81m{background-color:#ffffff;text-align:left;vertical-align:middle;}
+</style>
+
+<!-- table style -->
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;border-width:1px;border-style:solid;border-color:#ccc;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+.tg .tg-s6z2{text-align:center}
+.tg .tg-yw4l{vertical-align:top}
+</style>
+
+  </head>
+  <body data-gr-c-s-loaded="true">
+  	<br>
+    <center>
+      <h2>
+      	An Annotated Dataset for Prediction of Relatedness on Stack Overflow<br>
+      </h2>
+      <h3>
+        CoNLL 2018 <br>
+        The SIGNLL Conference on Computational Natural Language Learning<br>
+      </h3>
+
+      [Navigation] 
+      | [<a href="#intro">INTRODUCTION</a>]
+      | [<a href="#stru">STRUCTURE</a>]
+  	  | [<a href="#download">DOWNLOAD</a>]
+      | [<a href="#stat">STATISTIC</a>]
+    </center>
+
+    <h3 id="intro">INTRODUCTION</h3>
+    <p>
+    	A dataset for prediction of relatedness in more than 300K knowledge units pairs on Stack Overflow. In addition to natural language, this dataset contains program languages (i.e., code snippets) and tags, which their utility in prediction of relatedness can be evaluated in future research.
+      <!-- Knowledge units are linked by URL sharing as shown in following figure: <br> -->
+      <!-- Embed PDF File -->
+      <!-- <img src="./figs/example.jpeg" alt="Mountain View" style="width:500px;height:600px;"> -->
+      <br> <br>
+      A question along with all its answers refered as a knowledge unit(KU).
+      There are four classes of relatedness between two knowledge units, <em>duplicate</em>, <em>direct</em>, <em>indirect</em> and <em>isolated</em>.<br>
+      Definitions are as follows:
+      <br><br>
+      <table class="tg">
+  <tr>
+    <th class="tg-s6z2">Link Type<br>(Class)</th>
+    <th class="tg-031e">Description</th>
+  </tr>
+  <tr>
+    <td class="tg-031e">Duplicate</td>
+    <td class="tg-031e">Two knowledge units discuss the same question in different ways, and can be answeredby the same answer.</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">Direct</td>
+    <td class="tg-031e">One knowledge unit can help solve the problem in the other knowledge unit, for ex-ample, by explaining certain concepts, providing examples, or covering a sub-step forsolving a complex problem.</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">Indirect</td>
+    <td class="tg-yw4l">One knowledge unit provides related information, but it does not directly answer thequestion in the other knowledge unit.</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">Isolated</td>
+    <td class="tg-yw4l">The two knowledge units are not semantically related.</td>
+  </tr>
+</table>
+
+    </p>
+
+
+    <h3 id="stru">STRUCTURE</h3>
+    <p>
+      <table class="tg">
+  <tr>
+    <th class="tg-j4kc">Attr. Id</th>
+    <th class="tg-j4kc">Attr. Name</th>
+    <th class="tg-j4kc">Attr. Description</th>
+  </tr>
+  <tr>
+    <td class="tg-zlxb">1</td>
+    <td class="tg-zlxb">Id</td>
+    <td class="tg-zlxb">KU Pair (&lt; KU1, KU2 &gt;) Id</td>
+  </tr>
+  <tr>
+    <td class="tg-zlxb">2/13</td>
+    <td class="tg-zlxb">q1/2_Id</td>
+    <td class="tg-zlxb">Id of KU&#39;s Question on SO</td>
+  </tr>
+  <tr>
+    <td class="tg-zlxb">3/14</td>
+    <td class="tg-zlxb">q1/2_Title</td>
+    <td class="tg-zlxb">KU&#39;s Title</td>
+  </tr>
+  <tr>
+    <td class="tg-zlxb">4/15</td>
+    <td class="tg-zlxb">q1/2_Body</td>
+    <td class="tg-zlxb">The text of KU&#39;s Body (Exclude Code Snippets)</td>
+  </tr>
+  <tr>
+    <td class="tg-zlxb">5/16</td>
+    <td class="tg-zlxb">q1/2_BodyCode</td>
+    <td class="tg-zlxb">Code Snippets in KU&#39;s Body</td>
+  </tr>
+  <tr>
+    <td class="tg-i81m">6/17</td>
+    <td class="tg-i81m">q1/2_AcceptedAnswerId</td>
+    <td class="tg-i81m">Ids of KU&#39;s Accepted Answers on SO</td>
+  </tr>
+  <tr>
+    <td class="tg-i81m">7/18</td>
+    <td class="tg-i81m">q1/2_AcceptedAnswerBody</td>
+    <td class="tg-i81m">The text of KU&#39;s Accepted Answer (Exclude Code Snippets)</td>
+  </tr>
+  <tr>
+    <td class="tg-i81m">8/19</td>
+    <td class="tg-i81m">q1/2_AcceptedAnswerCode</td>
+    <td class="tg-i81m">Code Snippets in KU&#39;s Accepted Answer</td>
+  </tr>
+  <tr>
+    <td class="tg-i81m">9/20</td>
+    <td class="tg-i81m">q1/2_AnswersIdList</td>
+    <td class="tg-i81m">Ids of KU&#39;s Answers on SO</td>
+  </tr>
+  <tr>
+    <td class="tg-i81m">10/21</td>
+    <td class="tg-i81m">q1/2_AnswersBody</td>
+    <td class="tg-i81m">The text of KU&#39;s Answers (Exclude Code Snippets)</td>
+  </tr>
+  <tr>
+    <td class="tg-i81m">11/22</td>
+    <td class="tg-i81m">q1/2_AnswersCode</td>
+    <td class="tg-i81m">Code Snippets in KU&#39;s Answers</td>
+  </tr>
+  <tr>
+    <td class="tg-i81m">12/23</td>
+    <td class="tg-i81m">q1/2_Tags</td>
+    <td class="tg-i81m">Tags of KU</td>
+  </tr>
+  <tr>
+    <td class="tg-i81m">24</td>
+    <td class="tg-i81m">Class</td>
+    <td class="tg-i81m">Relationship (i.e., duplicate, direct, indirect or isolated)</td>
+  </tr>
+</table>
+   	</p>
+
+    <h3 id="download">DOWNLOAD</h3>
+      <p>
+      	<table class="tg">
+  <tr>
+    <th class="tg-031e">Format</th>
+    <th class="tg-031e">Load Script</th>
+    <th class="tg-031e">Source</th>
+  </tr>
+  <tr>
+    <td class="tg-031e">CSV</td>
+    <td class="tg-031e">
+    	<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">pandas</span> <span style="color: #008800; font-weight: bold">as</span> <span style="color: #0e84b5; font-weight: bold">pd</span>
+df <span style="color: #333333">=</span> pd<span style="color: #333333">.</span>read_csv(file_path, sep<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;,&quot;</span>, header<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span>, lineterminator<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&#39;</span>)
+<span style="color: #008800; font-weight: bold">for</span> index, row <span style="color: #000000; font-weight: bold">in</span> df<span style="color: #333333">.</span>iterrows():
+    <span style="color: #008800; font-weight: bold">print</span>(row)
+</pre></td></tr></table></div>
+    </td>
+    <td class="tg-031e">[<a href="https://drive.google.com/open?id=1I4_2qxBNyM1-Mpfnt3BV8mKjkPpi-efM">DOWNLOAD[448MB]</a>]</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">MySQL</td>
+    <td class="tg-031e">
+    	<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1</pre></td><td><pre style="margin: 0; line-height: 125%">mysql <span style="color: #333333">-</span>u username <span style="color: #333333">-</span>p database_name <span style="color: #333333">&lt;</span> file.<span style="color: #008800; font-weight: bold">sql</span>
+</pre></td></tr></table></div>
+    </td>
+    <td class="tg-031e">[<a href="https://drive.google.com/open?id=1vM2VkkbWXY2ekWIlOmhghgQzJW4BAiYW">DOWNLOAD[3GB]</a>]</td>
+  </tr>
+</table>
+
+	</p>
+
+    <h3 id="stat">STATISTIC</h3>
+    <P>
+    	<table class="tg">
+  <tr>
+    <th class="tg-031e">Scope</th>
+    <th class="tg-031e">Indicator</th>
+    <th class="tg-031e">Size</th>
+  </tr>
+  <tr>
+    <td class="tg-031e" rowspan="2">Whole KU</td>
+    <td class="tg-031e"># of distinct KUs</td>
+    <td class="tg-031e">160,161</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"># of four types of KU pairs</td>
+    <td class="tg-yw4l">347,372</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">Title</td>
+    <td class="tg-031e">avg. # of words in title</td>
+    <td class="tg-031e">8.52</td>
+  </tr>
+  <tr>
+    <td class="tg-031e" rowspan="4">Body</td>
+    <td class="tg-031e">avg. # of words in body(exclude code snippets)</td>
+    <td class="tg-031e">97.02</td>
+  </tr>
+  <tr>
+    <td class="tg-031e"># of distinct KUs whose body has at least one code snippet</td>
+    <td class="tg-031e">117,139(73%)</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">avg. # of code snippets in one body</td>
+    <td class="tg-031e">1.46</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">avg. # of words in single code snippet in one body</td>
+    <td class="tg-031e">118.46</td>
+  </tr>
+  <tr>
+    <td class="tg-031e" rowspan="8">Answers</td>
+    <td class="tg-031e"># of distinct answers</td>
+    <td class="tg-031e">318,491</td>
+  </tr>
+  <tr>
+    <td class="tg-031e">avg. # of answers within single KU</td>
+    <td class="tg-031e">1.99</td>
+  </tr>
+  <tr>
+    <td class="tg-031e"># of distinct KUs contain at least one answer</td>
+    <td class="tg-031e">140,122(87%)</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"># of distinct KUs contain an accepted answer</td>
+    <td class="tg-yw4l">90,672(57%)</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"># of distinct KUs whose answers has at least one code snippet</td>
+    <td class="tg-yw4l">96,707(60%)</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">avg. # of words in an answer (exclude code snippets)</td>
+    <td class="tg-yw4l">68.39</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">avg. # of code snippets within one answer</td>
+    <td class="tg-yw4l">0.60</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">avg. # of words in single code snippet</td>
+    <td class="tg-yw4l">81.98</td>
+  </tr>
+</table>
+    </P>
+
+</body></html>
